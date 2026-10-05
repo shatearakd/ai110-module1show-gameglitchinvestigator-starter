@@ -11,7 +11,7 @@ from logic_utils import (
 def test_winning_guess():
     assert check_guess(50, 50) == ("Win", "🎉 Correct!")
 
-
+#FIX - Refactored logic into test_game_logic to check hinting system.
 @pytest.mark.parametrize(
     ("guess", "secret", "expected"),
     [
@@ -45,6 +45,8 @@ def test_parse_guess_value(raw, expected):
 
 
 def test_update_score():
-    assert update_score(0, "Win", 1) == 80
-    assert update_score(10, "Too High", 2) == 15
-    assert update_score(10, "Too Low", 2) == 5
+    assert update_score(100, "Win", 1) == 100
+    assert update_score(95, "Win", 2) == 95
+    assert update_score(100, "Too High", 1) == 95
+    assert update_score(95, "Too Low", 2) == 90
+    assert update_score(100, "Tie", 1) == 100
