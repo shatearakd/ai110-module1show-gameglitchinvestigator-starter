@@ -1,0 +1,3 @@
+#They verify that guesses above and below the secret produce the right outcome and hint direction, including two-digit comparisons that can expose string-ordering mistakes. They also test guess parsing for integer input, decimal input, blank input, and invalid text.
+
+#Validation passed: 11 tests passed.

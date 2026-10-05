@@ -36,10 +36,10 @@ if "secret" not in st.session_state:
     st.session_state.secret = random.randint(low, high)
 
 if "attempts" not in st.session_state:
-    st.session_state.attempts = 1
+    st.session_state.attempts = 0
 
 if "score" not in st.session_state:
-    st.session_state.score = 0
+    st.session_state.score = 100
 
 if "status" not in st.session_state:
     st.session_state.status = "playing"
@@ -76,7 +76,10 @@ with col3:
 
 if new_game:
     st.session_state.attempts = 0
-    st.session_state.secret = random.randint(1, 100)
+    st.session_state.score = 100
+    st.session_state.status = "playing"
+    st.session_state.history = []
+    st.session_state.secret = random.randint(low, high)
     st.success("New game started.")
     st.rerun()
 
@@ -88,14 +91,13 @@ if st.session_state.status != "playing":
     st.stop()
 
 if submit:
-    st.session_state.attempts += 1
-
     ok, guess_int, err = parse_guess(raw_guess)
 
     if not ok:
         st.session_state.history.append(raw_guess)
         st.error(err)
     else:
+        st.session_state.attempts += 1
         st.session_state.history.append(guess_int)
 
         secret = st.session_state.secret
@@ -117,6 +119,8 @@ if submit:
                 f"You won! The secret was {st.session_state.secret}. "
                 f"Final score: {st.session_state.score}"
             )
+            #FIX: Used AI to identify str conversion line. Changed code to recall streamlit instead of turning
+            #into a string.
         else:
             if st.session_state.attempts >= attempt_limit:
                 st.session_state.status = "lost"

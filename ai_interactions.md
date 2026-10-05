@@ -10,15 +10,15 @@
 
 **What task did you give the agent?**
 
-<!-- Describe the goal you asked the agent to accomplish -->
+#I asked the agent (copilot) to identify the specific line impacting the hint values. 
 
 **What did the agent do?**
 
-<!-- List the steps the agent took (files edited, commands run, etc.) -->
+<!-- List the steps the agent took (files edited, commands run, etc.) --> It provided me with the specific issue line. 
 
 **What did you have to verify or fix manually?**
 
-<!-- Describe anything the agent got wrong or that required human review -->
+<!-- Describe anything the agent got wrong or that required human review --> I reran the code by correcting the line so that it recalled streamlit instead of converting the line to a string. 
 
 ---
 

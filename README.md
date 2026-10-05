@@ -25,19 +25,18 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
-- [ ] Detail which bugs you found.
-- [ ] Explain what fixes you applied.
+- [ x] Describe the game's purpose. This Game is an AI guessing game that requests the player guess a number between 1 and 100 against the 'mind' of the game. Each time a player loses, points are deducted. Each player receives 7 tries. After 7 failed attempts, the player loses. 
+- [x ] Detail which bugs you found.
+- [ x] Explain what fixes you applied.
 
 ## 📸 Demo Walkthrough
 
 Describe your fixed game in numbered steps so a reader can follow along without watching a video:
 
-1. <!-- Describe this step -->
-2. <!-- Describe this step -->
-3. <!-- Describe this step -->
-4. <!-- Describe this step -->
-5. <!-- Add more steps as needed -->
+1. Scroll to the bottom of the screen and select a number between 1 and 100.
+2. Click the "Submit Guess" button. 
+3. A green message will appear at the bottom of the screen telling you if your guess was correct or not. 
+4. <!-- Describe this step --> If you've tried 7 times, please select "New Game" to play again.
 
 **Screenshot** *(optional)*: <!-- Insert a screenshot of your fixed, winning game here -->
 
@@ -48,6 +47,15 @@ Describe your fixed game in numbered steps so a reader can follow along without 
 # pytest tests/
 # ========================= X passed in 0.XXs =========================
 ```
+#======================================================== test session starts =========================================================
+platform linux -- Python 3.14.7, pytest-9.1.1, pluggy-1.6.0
+rootdir: /workspaces/ai110-module1show-gameglitchinvestigator-starter
+plugins: anyio-4.15.1
+collected 11 items                                                                                                                   
+
+tests/test_game_logic.py ...........                                                                                           [100%]
+
+========================================================= 11 passed in 0.16s =========================================================
 
 ## 🚀 Stretch Features
 
